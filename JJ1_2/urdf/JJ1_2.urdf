@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="JJ1_2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-3.46944695195361E-17 0.0541343106662228 -0.0500000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.317885063070022" />
+      <inertia
+        ixx="0.000805530112810557"
+        ixy="1.3041432030326E-18"
+        ixz="-1.6823593501364E-19"
+        iyy="0.00137768813732968"
+        iyz="-6.58270704345859E-20"
+        izz="0.00134993322209962" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_leg">
+    <inertial>
+      <origin
+        xyz="-0.00999999999999997 -0.0449694323881673 -0.077889341683839"
+        rpy="0 0 0" />
+      <mass
+        value="0.101695020621345" />
+      <inertia
+        ixx="0.000516418820763554"
+        ixy="8.82811163187619E-20"
+        ixz="1.58978901600665E-19"
+        iyy="0.000386210698184656"
+        iyz="-0.000212287066998379"
+        izz="0.000141082707630677" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.095 0 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="25"
+      velocity="5" />
+  </joint>
+  <link
+    name="left_lower_leg">
+    <inertial>
+      <origin
+        xyz="-0.0104518404280339 -0.0504218920181224 0.0873332787891406"
+        rpy="0 0 0" />
+      <mass
+        value="0.0833200536847903" />
+      <inertia
+        ixx="0.000384202540438722"
+        ixy="1.98939997649913E-07"
+        ixz="-3.44574183587276E-07"
+        iyy="0.000283396943067376"
+        iyz="0.000157071553743909"
+        izz="0.000102026335395215" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lwft_lower_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.1 -0.17321"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg" />
+    <child
+      link="left_lower_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="25"
+      velocity="5" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-0.00986648847589566 3.04027841663279E-06 -2.21045401397127E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0694113133479026" />
+      <inertia
+        ixx="0.000134229436938703"
+        ixy="-1.56927808445733E-09"
+        ixz="1.1407701402417E-09"
+        iyy="6.90007512954513E-05"
+        iyz="-8.47025339346594E-10"
+        izz="6.90002022598184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.014 -0.1 0.17321"
+      rpy="0 0 0" />
+    <parent
+      link="left_lower_leg" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="8"
+      velocity="25" />
+  </joint>
+  <link
+    name="right_leg">
+    <inertial>
+      <origin
+        xyz="0.01 -0.0449694323881673 -0.0778893416838389"
+        rpy="0 0 0" />
+      <mass
+        value="0.101695020621345" />
+      <inertia
+        ixx="0.000516418820763554"
+        ixy="9.58709233175815E-21"
+        ixz="9.08309461311207E-21"
+        iyy="0.000386210698184656"
+        iyz="-0.000212287066998379"
+        izz="0.000141082707630677" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.095 0 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="25"
+      velocity="5" />
+  </joint>
+  <link
+    name="right_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0104518404280338 -0.0504218920181224 0.0873332787891406"
+        rpy="0 0 0" />
+      <mass
+        value="0.0833200536847904" />
+      <inertia
+        ixx="0.000384202540438722"
+        ixy="-1.98939997650006E-07"
+        ixz="3.44574183587448E-07"
+        iyy="0.000283396943067377"
+        iyz="0.000157071553743909"
+        izz="0.000102026335395215" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_lower_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.1 -0.17321"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg" />
+    <child
+      link="right_lower_leg" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="25"
+      velocity="5" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="0.00363351152410418 3.04027841654952E-06 -2.21045401420719E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0694113133479006" />
+      <inertia
+        ixx="0.000134229436938703"
+        ixy="-1.56927808436388E-09"
+        ixz="1.14077014027389E-09"
+        iyy="6.90007512954512E-05"
+        iyz="-8.47025339568194E-10"
+        izz="6.90002022598183E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JJ1_2/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0075 -0.1 0.17321"
+      rpy="0 0 0" />
+    <parent
+      link="right_lower_leg" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="8"
+      velocity="25" />
+  </joint>
+</robot>
