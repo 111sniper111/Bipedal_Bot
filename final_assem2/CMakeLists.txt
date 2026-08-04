@@ -1,14 +1,24 @@
-cmake_minimum_required(VERSION 2.8.3)
-
+cmake_minimum_required(VERSION 3.5)
 project(final_assem2)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
+install(
+  DIRECTORY
+    config
+    launch
+    meshes
+    urdf
+    worlds
+  DESTINATION
+    share/${PROJECT_NAME}
+)
 
-find_package(roslaunch)
+install(
+  PROGRAMS
+    scripts/balance_controller.py
+  DESTINATION
+    lib/${PROJECT_NAME}
+)
 
-foreach(dir config launch meshes urdf)
-	install(DIRECTORY ${dir}/
-		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+ament_package()

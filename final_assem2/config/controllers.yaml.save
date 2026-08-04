@@ -1,0 +1,42 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    leg_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    wheel_controller:
+      type: velocity_controllers/ointGroupVelocityController
+
+joint_state_broadcaster:
+  ros__parameters: {}
+
+leg_position_controller:
+  ros__parameters:
+    joints:
+      - left_white_top_joint
+      - left_white_bottom_joint
+      - right_white_top_joint
+      - right_white_bottom_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: fal
+
+wheel_controller:
+  ros__parameters:
+    joints:
+      - left_wheel_joint
+      - right_wheel_joint
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity

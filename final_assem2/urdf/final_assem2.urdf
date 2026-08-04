@@ -11,7 +11,7 @@
         xyz="-0.000139721801499459 -0.00891990633481813 0.0545743288252821"
         rpy="0 0 0" />
       <mass
-        value="0.159950800266572" />
+        value="0.0001" />
       <inertia
         ixx="0.000101651221165473"
         ixy="-5.03027315623083E-07"
@@ -44,122 +44,10 @@
       </geometry>
     </collision>
   </link>
-  <link
-    name="left_upper_leg">
-    <inertial>
-      <origin
-        xyz="-0.00184708648070556 0.0121982131166921 -0.0276620471353151"
-        rpy="0 0 0" />
-      <mass
-        value="0.004818111387881" />
-      <inertia
-        ixx="1.41741993826605E-06"
-        ixy="5.75849506779538E-09"
-        ixz="-1.34622826600359E-08"
-        iyy="1.20038634588536E-06"
-        iyz="5.0615818683572E-07"
-        izz="2.8007223812427E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/left_upper_leg.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.831372549019608 0.690196078431373 0.411764705882353 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/left_upper_leg.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="left_hip_joint "
-    type="revolute">
-    <origin
-      xyz="0.051451 0.021878 0.068469"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="left_upper_leg" />
-    <axis
-      xyz="1 0 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10"
-      velocity="1" />
-  </joint>
-  <link
-    name="left_upper2_leg">
-    <inertial>
-      <origin
-        xyz="-0.00343829987733225 -0.031950330703089 -0.0400373197439976"
-        rpy="0 0 0" />
-      <mass
-        value="0.0110711596178799" />
-      <inertia
-        ixx="9.0007542462057E-06"
-        ixy="-8.52452741139558E-08"
-        ixz="-1.12616251474775E-07"
-        iyy="5.41600205355566E-06"
-        iyz="-3.44596894822395E-06"
-        izz="3.64095364398878E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/left_upper2_leg.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.831372549019608 0.690196078431373 0.411764705882353 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/left_upper2_leg.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="left_upper_bottom_joint"
-    type="revolute">
-    <origin
-      xyz="0.00175 0.024173 -0.054915"
-      rpy="0 0 0" />
-    <parent
-      link="left_upper_leg" />
-    <child
-      link="left_upper2_leg" />
-    <axis
-      xyz="1 0 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10"
-      velocity="1" />
-  </joint>
+  
+  
+  
+  
   <link
     name="left_white_link">
     <inertial>
@@ -167,7 +55,7 @@
         xyz="-0.00351284827896975 0.014089389436349 -0.0175712720648845"
         rpy="0 0 0" />
       <mass
-        value="0.0136561818789523" />
+        value="0.0001" />
       <inertia
         ixx="6.1721720458214E-06"
         ixy="4.6117482237348E-08"
@@ -215,7 +103,7 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10"
+      effort="1000"
       velocity="1" />
   </joint>
   <link
@@ -225,7 +113,7 @@
         xyz="0.00231170012266655 -0.0227052632231051 -0.0282250918724002"
         rpy="0 0 0" />
       <mass
-        value="0.0110711596178799" />
+        value="0.0001" />
       <inertia
         ixx="9.0007542462057E-06"
         ixy="-8.52452741139558E-08"
@@ -273,7 +161,7 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10"
+      effort="1000"
       velocity="1" />
   </joint>
   <link
@@ -283,7 +171,7 @@
         xyz="0.0163975042440271 1.62206759338895E-06 1.44651305899607E-05"
         rpy="0 0 0" />
       <mass
-        value="0.0821704328344352" />
+        value="2.5" />
       <inertia
         ixx="5.18918517052579E-05"
         ixy="1.18719486965528E-09"
@@ -327,127 +215,15 @@
     <child
       link="left_wheel" />
     <axis
-      xyz="-1 0 0" />
-    <limit
-      effort="10"
-      velocity="5" />
-  </joint>
-  <link
-    name="right_upper_leg">
-    <inertial>
-      <origin
-        xyz="0.00184708742415259 0.0121982108761201 -0.027662045184495"
-        rpy="0 0 0" />
-      <mass
-        value="0.00481811091262427" />
-      <inertia
-        ixx="1.41741990276812E-06"
-        ixy="-5.7585088246898E-09"
-        ixz="1.34622801570938E-08"
-        iyy="1.20038634610856E-06"
-        iyz="5.0615815401873E-07"
-        izz="2.80072192554383E-07" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/right_upper_leg.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.831372549019608 0.690196078431373 0.411764705882353 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/right_upper_leg.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="right_hip_joint"
-    type="revolute">
-    <origin
-      xyz="-0.051549 0.021878 0.068469"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="right_upper_leg" />
-    <axis
       xyz="1 0 0" />
     <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10"
-      velocity="1" />
+      effort="1000"
+      velocity="20" />
   </joint>
-  <link
-    name="right_upper2_leg">
-    <inertial>
-      <origin
-        xyz="0.00343829959902736 -0.0319503283305203 -0.0400373231220026"
-        rpy="0 0 0" />
-      <mass
-        value="0.0110711602724557" />
-      <inertia
-        ixx="9.00075447641487E-06"
-        ixy="8.52453919454247E-08"
-        ixz="1.12616172038318E-07"
-        iyy="5.41600209857497E-06"
-        iyz="-3.44596897863516E-06"
-        izz="3.64095387833541E-06" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/right_upper2_leg.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.831372549019608 0.690196078431373 0.411764705882353 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://final_assem2/meshes/right_upper2_leg.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="right_upper_bottom_joint"
-    type="revolute">
-    <origin
-      xyz="-0.00175 0.024173 -0.054915"
-      rpy="0 0 0" />
-    <parent
-      link="right_upper_leg" />
-    <child
-      link="right_upper2_leg" />
-    <axis
-      xyz="1 0 0" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="10"
-      velocity="1" />
-  </joint>
+  
+  
+  
+  
   <link
     name="right_white_link">
     <inertial>
@@ -455,7 +231,7 @@
         xyz="0.00351284814097716 0.0140893887999058 -0.0175712711517945"
         rpy="0 0 0" />
       <mass
-        value="0.0136561811410979" />
+        value="0.0001" />
       <inertia
         ixx="6.17217171245867E-06"
         ixy="-4.61174422768703E-08"
@@ -503,7 +279,7 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10"
+      effort="1000"
       velocity="1" />
   </joint>
   <link
@@ -513,7 +289,7 @@
         xyz="0.00343829959902858 -0.0227052608505364 -0.0282250952504051"
         rpy="0 0 0" />
       <mass
-        value="0.0110711602724557" />
+        value="0.0001" />
       <inertia
         ixx="9.00075447641487E-06"
         ixy="8.52453919454247E-08"
@@ -561,7 +337,7 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="10"
+      effort="1000"
       velocity="1" />
   </joint>
   <link
@@ -571,7 +347,7 @@
         xyz="-0.0146672527215705 1.25422636613262E-05 7.36024777815703E-06"
         rpy="0 0 0" />
       <mass
-        value="0.0821706301013002" />
+        value="2.5" />
       <inertia
         ixx="5.18920350674668E-05"
         ixy="-8.93025684542342E-09"
@@ -615,9 +391,124 @@
     <child
       link="right_wheel" />
     <axis
-      xyz="-1 0 0" />
+      xyz="1 0 0" />
     <limit
-      effort="10"
-      velocity="5" />
+      effort="1000"
+      velocity="20" />
   </joint>
-</robot>
+  
+
+
+
+  
+  
+
+  <!-- Fortress gz_ros2_control plugin -->
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so"
+            name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/pranav/ros2_ws/install/final_assem2/share/final_assem2/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- Wheel friction -->
+  <gazebo reference="left_wheel"><mu1>0.9</mu1><mu2>0.9</mu2><kp>500000</kp><kd>10</kd></gazebo>
+  <gazebo reference="right_wheel"><mu1>0.9</mu1><mu2>0.9</mu2><kp>500000</kp><kd>10</kd></gazebo>
+
+  <!-- ========== IMU Sensor (Fortress) ========== -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.0001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.002</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.002</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.002</stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.02</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.02</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.02</stddev></noise></z>
+        </linear_acceleration>
+      </imu>
+      <topic>/imu/data</topic>
+      <gz_frame_id>imu_link</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+  <!-- ========== ros2_control (6 joints only) ========== -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <joint name="left_white_top_joint">
+      <command_interface name="position">
+        <param name="min">-1.5708</param>
+        <param name="max">1.5708</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="left_white_bottom_joint">
+      <command_interface name="position">
+        <param name="min">-1.5708</param>
+        <param name="max">1.5708</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_white_top_joint">
+      <command_interface name="position">
+        <param name="min">-1.5708</param>
+        <param name="max">1.5708</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_white_bottom_joint">
+      <command_interface name="position">
+        <param name="min">-1.5708</param>
+        <param name="max">1.5708</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="left_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-5</param>
+        <param name="max">20</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-5</param>
+        <param name="max">20</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+  </ros2_control>
+
+  </robot>
